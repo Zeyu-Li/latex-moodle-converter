@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) 
 
-![logo](logo.png)
+![screenshot](screenshot.png)
 
 Converts LaTeX to [Moodle](https://moodle.org/) reorganizable text
 
