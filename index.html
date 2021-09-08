@@ -88,6 +88,7 @@
         area.addEventListener('input', () => {
             let outputString = ""
             const newInput = area.value.replaceAll("\\$", nonsense)
+            
             let start = true
             for (let i = 0; newInput && i < newInput.length; i++) {
                 if (newInput[i] === "$") {
@@ -98,10 +99,10 @@
                 }
             }
             // convert nonsense back to regular dollar sign
-            output.innerHTML = outputString.replaceAll(nonsense, "$")
+            output.innerHTML = (outputString.replaceAll('\n', '<br>')).replaceAll(nonsense, "$")
         }, false)
         button.addEventListener('click', () => {
-            navigator.clipboard.writeText(output.innerHTML)
+            navigator.clipboard.writeText(output.innerHTML.replaceAll('<br>', '\n'))
         }, false)
     </script>
 
