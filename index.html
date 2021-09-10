@@ -84,9 +84,10 @@
         const output = document.getElementById("output")
         const button = document.querySelector(".copyButton")
         const nonsense = "#*%@^"
+        let outputString = ""
         
         area.addEventListener('input', () => {
-            let outputString = ""
+            outputString = ""
             const newInput = area.value.replaceAll("\\$", nonsense)
             
             let start = true
@@ -99,10 +100,10 @@
                 }
             }
             // convert nonsense back to regular dollar sign
-            output.innerHTML = (outputString.replaceAll('\n', '<br>')).replaceAll(nonsense, "$")
+            output.innerText = outputString.replaceAll(nonsense, "$")
         }, false)
         button.addEventListener('click', () => {
-            navigator.clipboard.writeText(output.innerHTML.replaceAll('<br>', '\n'))
+            navigator.clipboard.writeText(outputString)
         }, false)
     </script>
 
